@@ -4,6 +4,7 @@
     Author     : amunoz
 --%>
 
+<%@page import="com.newtyf.ecommerceproject.connection.DbConnection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,9 @@
     </head>
     <body>
         <%@include file="/includes/navbar.jsp" %>
+        
+        <% DbConnection.getConnection(); %>
+        
         <div class="container">
             <h1>Hello World!</h1>
         </div>
