@@ -16,7 +16,14 @@
   git clone https://github.com/newtyf/e-commerce-project.git
   ```
 
-2. Config Server
+2. Setup database.properties:
+
+  ```sh
+    # create database.properties in src/main/resources/, like: src/main/resources/database.properties
+    # and then add the database credential inside
+  ```
+
+3. Config Server
 
   ```sh
   # You need config Apache Tomcat 9.0 in your IDE an local machine to start the web app
