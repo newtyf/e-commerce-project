@@ -19,16 +19,19 @@
                     <form action="user-login" method="post">
                         <div class="form-group">
                             <label>Email address</label> 
-                            <input type="email" name="login-email" class="form-control" placeholder="Enter email">
+                            <input type="email" name="login-email" class="form-control" placeholder="Enter email" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label> 
-                            <input type="password" name="login-password" class="form-control" placeholder="Password">
+                            <input type="password" name="login-password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    <p class="text-center mt-2 mb-0">
+                        <a href="register.jsp">Si no tienes una cuenta, regitrate aqui!</a>
+                    </p>
                 </div>
             </div>
         </div>

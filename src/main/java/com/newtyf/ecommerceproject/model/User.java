@@ -16,10 +16,13 @@ public class User {
     private String address;
     private String email;
     private String password;
-    private String cartId;
-    private String ordersId;
+    private int cartId;
+    private int ordersId;
 
-    public User(int id, String name, String surName, String phone, String address, String email, String password, String cartId, String ordersId) {
+    public User() {
+    }
+
+    public User(int id, String name, String surName, String phone, String address, String email, String password, int cartId, int ordersId) {
         this.id = id;
         this.name = name;
         this.surName = surName;
@@ -87,19 +90,19 @@ public class User {
         this.password = password;
     }
 
-    public String getCartId() {
+    public int getCartId() {
         return cartId;
     }
 
-    public void setCartId(String cartId) {
+    public void setCartId(int cartId) {
         this.cartId = cartId;
     }
 
-    public String getOrdersId() {
+    public int getOrdersId() {
         return ordersId;
     }
 
-    public void setOrdersId(String ordersId) {
+    public void setOrdersId(int ordersId) {
         this.ordersId = ordersId;
     }
     

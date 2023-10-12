@@ -22,11 +22,11 @@
                         //if (auth != null) {
                     %>
                 <li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
-                <li class="nav-item"><a class="btn btn-danger ml-2" href="log-out">Logout</a></li>
+                <li class="nav-item mb-2 mr-2"><a class="btn btn-danger" href="log-out">Logout</a></li>
                     <%
                     //} else {
                     %>
-                <li class="nav-item"><a class="btn btn-secondary ml-2" href="login.jsp">Login</a></li>
+                <li class="nav-item"><a class="btn btn-secondary" href="login.jsp">Login</a></li>
                     <%
                       //  }
                     %>
