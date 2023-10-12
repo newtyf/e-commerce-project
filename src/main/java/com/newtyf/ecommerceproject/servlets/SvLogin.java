@@ -60,6 +60,8 @@ public class SvLogin extends HttpServlet {
 
                 if (user != null) {
                     out.println("user login");
+                    request.getSession().setAttribute("auth", user);
+                    response.sendRedirect("index.jsp");
                 } else {
                     out.println("user login failed");
                 }

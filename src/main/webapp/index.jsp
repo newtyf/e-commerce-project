@@ -14,11 +14,15 @@
     </head>
     <body>
         <%@include file="/includes/navbar.jsp" %>
-        
-        <% DbConnection.getConnection(); %>
-        
+
+        <% DbConnection.getConnection();%>
+
         <div class="container">
-            <h1>Hello World!</h1>
+            <% if (auth != null) {%>
+            <h1>Bienvenido <%=auth.getName()%>!</h1>
+            <%
+                }
+            %>
         </div>
     </body>
     <%@include file="/includes/footer.jsp" %>

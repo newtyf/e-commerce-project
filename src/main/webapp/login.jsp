@@ -12,6 +12,7 @@
         <title>IMPACTO S.A.C Login</title>
     </head>
     <body>
+        <%@include file="/includes/navbar.jsp" %>
         <div class="container">
             <div class="card w-50 mx-auto my-5">
                 <div class="card-header text-center">User Login</div>
@@ -25,7 +26,7 @@
                             <label>Password</label> 
                             <input type="password" name="login-password" class="form-control" placeholder="Password" required>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center mt-2">
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </form>
