@@ -71,6 +71,12 @@ public class SvRegister extends HttpServlet {
 
             try {
                 UserDao udao = new UserDao(DbConnection.getConnection());
+                
+                if (udao.UserExists(email, phone)) {
+                    response.sendRedirect("register.jsp?duplicate=true");
+                    return;
+                }
+                
                 User user = udao.UserRegister(name, surName, phone, address, email, password);
 
                 if (user != null) {

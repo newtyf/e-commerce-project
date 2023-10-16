@@ -22,6 +22,22 @@ public class UserDao {
         this.con = con;
     }
 
+    public boolean UserExists(String email, String phone) {
+        try {
+            query = "select * from users where email=? or phone=?";
+            pst = con.prepareStatement(query);
+            pst.setString(1, email);
+            pst.setString(2, phone);
+            rs = pst.executeQuery();
+            
+            return rs.next();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return true;
+    }
+
     public User userLogin(String email, String password) {
         User user = null;
 
