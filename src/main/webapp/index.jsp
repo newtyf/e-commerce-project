@@ -10,20 +10,18 @@
 <html>
     <head>
         <%@include file="/includes/head.jsp" %>
-        <title>IMPACTO S.A.C</title>
+        <title>IMPACTO S.A.C | Home</title>
     </head>
     <body>
         <%@include file="/includes/navbar.jsp" %>
 
-        <% DbConnection.getConnection();%>
-
         <div class="container">
             <% if (auth != null) {%>
-            <h1>Bienvenido <%=auth.getName()%>!</h1>
+            <h1>Bienvenido <%=auth.getName()%> <%=auth.getSurName()%>!</h1>
             <%
                 }
             %>
         </div>
+        <%@include file="/includes/footer.jsp" %>
     </body>
-    <%@include file="/includes/footer.jsp" %>
 </html>

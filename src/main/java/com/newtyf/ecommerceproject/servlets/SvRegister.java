@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author amunoz
+ * @author AXEL
  */
-@WebServlet(name = "SvLogin", urlPatterns = {"/user-login"})
-public class SvLogin extends HttpServlet {
+@WebServlet(name = "SvRegister", urlPatterns = {"/user-register"})
+public class SvRegister extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,20 +31,27 @@ public class SvLogin extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SvLogin</title>");
+            out.println("<title>Servlet SvRegister</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SvLogin at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SvRegister at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("register.jsp");
     }
 
     @Override
@@ -53,19 +60,25 @@ public class SvLogin extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String email = request.getParameter("login-email");
-            String password = request.getParameter("login-password");
+            String name = request.getParameter("register-name");
+            String surName = request.getParameter("register-surname");
+            String phone = request.getParameter("register-phone");
+            String address = request.getParameter("register-address");
+            String email = request.getParameter("register-email");
+            String password = request.getParameter("register-password");
+
+            System.out.println(surName);
 
             try {
                 UserDao udao = new UserDao(DbConnection.getConnection());
-                User user = udao.userLogin(email, password);
+                User user = udao.UserRegister(name, surName, phone, address, email, password);
 
                 if (user != null) {
-                    out.println("user login");
+                    out.println("user register succesfull");
                     request.getSession().setAttribute("auth", user);
                     response.sendRedirect("index.jsp");
                 } else {
-                    out.println("user login failed");
+                    out.println("user register failed");
                 }
 
             } catch (ClassNotFoundException | SQLException e) {
@@ -75,11 +88,6 @@ public class SvLogin extends HttpServlet {
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

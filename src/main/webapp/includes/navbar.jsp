@@ -20,13 +20,13 @@ User auth = (User) request.getSession().getAttribute("auth");
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline row mx-1">
+            <form id="navbar-search" class="form-inline row mx-1">
                 <input class="form-control mr-md-2 col-12 col-md-8 " type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0 col-12 col-md-auto" type="submit">Search</button>
             </form>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="cart.jsp">Cart <span class="badge badge-danger">2</span> </a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.jsp">Cart <span class="badge badge-danger">0</span> </a></li>
                 <li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
                     <%
                         if (auth != null) {

@@ -12,6 +12,7 @@
         <title>IMPACTO S.A.C Register</title>
     </head>
     <body>
+        <%@include file="/includes/navbar.jsp" %>
         <div class="container">
             <div class="card w-50 mx-auto my-5">
                 <div class="card-header text-center">User Register</div>
@@ -48,6 +49,6 @@
                 </div>
             </div>
         </div>
+        <%@include file="/includes/footer.jsp" %>
     </body>
-    <%@include file="/includes/footer.jsp" %>
 </html>
