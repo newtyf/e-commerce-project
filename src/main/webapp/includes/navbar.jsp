@@ -31,7 +31,7 @@ User auth = (User) request.getSession().getAttribute("auth");
                     <%
                         if (auth != null) {
                     %>
-                <li class="nav-item mb-2 mr-md-2"><a class="btn btn-danger w-100" href="log-out">Logout</a></li>
+                <li class="nav-item mb-2 mr-md-2"><a class="btn btn-danger w-100" href="user-logout">Logout</a></li>
                     <%
                     } else {
                     %>

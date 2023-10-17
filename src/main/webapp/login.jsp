@@ -13,6 +13,11 @@
     </head>
     <body>
         <%@include file="/includes/navbar.jsp" %>
+        <%// Verifica si la variable "auth" no está presente en la sesión
+            if (auth != null) {
+                response.sendRedirect("index.jsp");
+            }
+        %>
         <div class="container">
             <div class="card w-50 mx-auto my-5">
                 <div class="card-header text-center">User Login</div>
